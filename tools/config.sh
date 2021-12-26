@@ -3,7 +3,7 @@
 IDF_COMPS="$IDF_PATH/components"
 
 if [ -z $IDF_BRANCH ]; then
-	IDF_BRANCH="master"
+	IDF_BRANCH="release/v4.4"
 fi
 
 if [ -z $AR_PR_TARGET_BRANCH ]; then
@@ -24,7 +24,8 @@ fi
 IDF_TOOLCHAIN="xtensa-$IDF_TARGET-elf"
 
 # Owner of the target ESP32 Arduino repository
-AR_USER="espressif"
+AR_USER="tasmota"
+# AR_USER="espressif"
 
 # The full name of the repository
 AR_REPO="$AR_USER/arduino-esp32"

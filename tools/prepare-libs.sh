@@ -443,6 +443,8 @@ function copy_precompiled_lib(){
 mkdir -p "$AR_SDK/ld"
 set -- $LD_SCRIPT_DIRS
 for item; do
+	item="${item%\"}"
+	item="${item#\"}"
 	find "$item" -name '*.ld' -exec cp -f {} "$AR_SDK/ld/" \;
 	for lib in `find "$item" -name '*.a'`; do
 		copy_precompiled_lib "$lib"
