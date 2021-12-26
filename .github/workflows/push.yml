@@ -1,22 +1,28 @@
-name: ESP32 Arduino
+name: ESP32 Arduino master branch
 
 on:
-  push:
-    branches:
-    - master
+  workflow_dispatch:  # Manually start a workflow
+#  push:
+#    branches: master
+#    paths-ignore:
+#    - '.github/**' # Ignore changes towards the .github directory
 
 jobs:
   build-libs:
     name: Build Arduino Libs
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.8.10'
+        architecture: 'x64' 
     - name: Install dependencies
       run: bash ./tools/prepare-ci.sh
     - name: Build Arduino Libs
       run: bash ./build.sh
     - name: Upload artifact
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v2
       with:
         name: esp32-arduino
         path: dist
