@@ -1,0 +1,5 @@
+./build.sh -A 2.0.18 -I v4.4.8.240628 -t esp32c3 -s
+./build.sh -t esp32c3 -b menuconfig -s
+./build.sh -t esp32c3 -b menuconfig -A 2.0.18 -I v4.4.8.240628
+
+git clone -b v4.4.8.240628 --recurse https://github.com/tasmota/esp-idf
