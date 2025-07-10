@@ -1,16 +1,16 @@
 #!/bin/bash
 
 # Owner of the IDF/ESP32 repositorys
-AR_USER="tasmota"
+AR_USER="espressif"
 
 # Arduino branch to use
 if [ -z $AR_BRANCH ]; then
-    AR_BRANCH="release/v2.x"
+    AR_BRANCH="2.0.17"
 fi
 
 # The IDF branch to use
 if [ -z $IDF_BRANCH ]; then
-	IDF_BRANCH="release/v4.4"
+	IDF_BRANCH="v4.4.7"
 fi
 
 # Arduino commit to use
