@@ -10,7 +10,7 @@ fi
 
 # The IDF branch to use
 if [ -z $IDF_BRANCH ]; then
-	IDF_BRANCH="v4.4.7"
+	IDF_BRANCH="v4.4.8"
 fi
 
 # Arduino commit to use
